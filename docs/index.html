@@ -5,14 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Painel Fortaleza</title>
 <style>
-  #login-gate { position: fixed; inset: 0; z-index: 100; background: #101815; color: #E7EEEA; display: flex; align-items: center; justify-content: center; font-family: -apple-system, "Segoe UI", Arial, sans-serif; }
-  #login-gate .box { background: #182420; border: 1px solid #2A3830; border-radius: 14px; padding: 32px 30px; width: 320px; max-width: calc(100vw - 40px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
-  #login-gate h1 { font-size: 17px; margin: 0 0 6px; }
-  #login-gate p { font-size: 13px; color: #8CA098; margin: 0 0 18px; }
-  #login-gate input { width: 100%; font-size: 14px; padding: 10px 12px; border-radius: 8px; border: 1px solid #2A3830; background: #101815; color: #E7EEEA; box-sizing: border-box; }
-  #login-gate button { width: 100%; margin-top: 12px; font-size: 14px; font-weight: 600; padding: 10px 12px; border-radius: 8px; border: none; background: #0E6E5E; color: #fff; cursor: pointer; }
+  #login-gate {
+    position: fixed; inset: 0; z-index: 100; color: #E7EEEA; display: flex; align-items: center; justify-content: center;
+    font-family: -apple-system, "Segoe UI", Arial, sans-serif; padding: 24px; box-sizing: border-box;
+    background:
+      radial-gradient(circle at 18% 20%, rgba(63,187,163,0.16), transparent 42%),
+      radial-gradient(circle at 82% 78%, rgba(211,174,92,0.10), transparent 45%),
+      linear-gradient(160deg, #101815 0%, #0A1210 100%);
+  }
+  #login-gate .eyebrow { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #63D2BB; margin: 0 0 14px; }
+  #login-gate .box { background: rgba(24,36,32,0.9); backdrop-filter: blur(6px); border: 1px solid #2A3830; border-radius: 16px; padding: 40px 36px; width: 380px; max-width: calc(100vw - 48px); box-shadow: 0 20px 60px rgba(0,0,0,0.55); }
+  #login-gate h1 { font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-weight: 500; font-size: 26px; margin: 0 0 10px; }
+  #login-gate p { font-size: 13.5px; line-height: 1.5; color: #8CA098; margin: 0 0 24px; }
+  #login-gate input { width: 100%; font-size: 15px; padding: 12px 14px; border-radius: 9px; border: 1px solid #2A3830; background: #0A1210; color: #E7EEEA; box-sizing: border-box; }
+  #login-gate input:focus { outline: 2px solid #3FBBA3; outline-offset: 1px; }
+  #login-gate button { width: 100%; margin-top: 14px; font-size: 15px; font-weight: 600; padding: 12px 14px; border-radius: 9px; border: none; background: #0E6E5E; color: #fff; cursor: pointer; transition: background 0.15s; }
   #login-gate button:hover { background: #0A5548; }
-  #login-gate .erro { color: #E08669; font-size: 12.5px; margin-top: 10px; display: none; }
+  #login-gate .erro { color: #E08669; font-size: 12.5px; margin-top: 12px; display: none; }
+  #login-gate .rodape { margin-top: 26px; font-size: 11.5px; color: #4A5D56; }
   [hidden] { display: none !important; }
 </style>
 <style>
@@ -215,11 +225,13 @@
 
 <div id="login-gate">
   <div class="box">
+    <p class="eyebrow">Fortaleza · Ceará · piloto geográfico</p>
     <h1>Painel Fortaleza</h1>
     <p>Acesso restrito ao grupo Novus / Pramorar. Senha compartilhada com o time.</p>
     <input type="password" id="login-senha" placeholder="Senha" autofocus>
     <button id="login-entrar" type="button">Entrar</button>
     <p class="erro" id="login-erro">Senha incorreta.</p>
+    <p class="rodape">Inteligência imobiliária Nordeste — dashboard interno</p>
   </div>
 </div>
 <script>
